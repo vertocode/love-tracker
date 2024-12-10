@@ -4,7 +4,7 @@ A simple application I created as a gift for my girlfriend to celebrate our 3rd 
 
 ## Demo
 
-![love-tracker.png](public/love-tracker.png)
+![love-tracker.png](public/demo.png)
 
 #### Scan the QR code below to view the live demo:
 
