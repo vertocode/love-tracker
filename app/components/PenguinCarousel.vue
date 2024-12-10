@@ -1,6 +1,6 @@
 <template>
   <v-card color="white" class="mb-5 text-black">
-    <v-card-title class="display-1 font-weight-bold">
+    <v-card-title class="display-1 font-weight-bold text-wrap">
       No gelo da vida, dois pinguins caminham lado a lado. ❄️❤️
     </v-card-title>
 
