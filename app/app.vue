@@ -8,6 +8,9 @@
 
 <style lang="scss" scoped>
 .app {
-  background: url('~/assets/background.jpg') no-repeat center center ;
+  background: url('http://localhost:3000/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 </style>

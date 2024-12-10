@@ -4,71 +4,20 @@
       No gelo da vida, dois pinguins caminham lado a lado. ❄️❤️
     </v-card-title>
 
-    <section>
-      <v-card-subtitle class="mt-5">
-        Amamos pegar uma praia
+    <section v-for="(slide, idx) in slides" :key="`slide-${idx}`">
+      <v-card-subtitle class="subtitle">
+        {{ slide.title }}
       </v-card-subtitle>
-      <v-carousel cycle>
+      <v-carousel class="carousel" cycle>
         <v-carousel-item
-            v-for="(slide, i) in slides"
-            :key="i"
+            v-for="(_, imageIdx) in new Array(slide.number)"
+            :key="`img-${imageIdx}`"
         >
-          <v-sheet
-              :color="colors[i]"
-              height="100%"
-          >
-            <div class="d-flex fill-height justify-center align-center">
-              <div class="text-h2">
-                {{ slide }} Slide
-              </div>
-            </div>
-          </v-sheet>
-        </v-carousel-item>
-      </v-carousel>
-    </section>
-
-    <section>
-      <v-card-subtitle class="mt-5">
-        Amamos pegar uma praia
-      </v-card-subtitle>
-      <v-carousel cycle>
-        <v-carousel-item
-            v-for="(slide, i) in slides"
-            :key="i"
-        >
-          <v-sheet
-              :color="colors[i]"
-              height="100%"
-          >
-            <div class="d-flex fill-height justify-center align-center">
-              <div class="text-h2">
-                {{ slide }} Slide
-              </div>
-            </div>
-          </v-sheet>
-        </v-carousel-item>
-      </v-carousel>
-    </section>
-
-    <section>
-      <v-card-subtitle class="mt-5">
-        Amamos pegar uma praia
-      </v-card-subtitle>
-      <v-carousel cycle>
-        <v-carousel-item
-            v-for="(slide, i) in slides"
-            :key="i"
-        >
-          <v-sheet
-              :color="colors[i]"
-              height="100%"
-          >
-            <div class="d-flex fill-height justify-center align-center">
-              <div class="text-h2">
-                {{ slide }} Slide
-              </div>
-            </div>
-          </v-sheet>
+          <v-img
+              :src="`/carousel/${slide.folder}/${imageIdx + 1}.jpg`"
+              alt="imagem"
+              class="image"
+          />
         </v-carousel-item>
       </v-carousel>
     </section>
@@ -76,19 +25,44 @@
 </template>
 
 <script setup lang="ts">
-const colors = [
-  'indigo',
-  'warning',
-  'pink darken-2',
-  'red lighten-1',
-  'deep-purple accent-4'
-]
-
 const slides = [
-  'First',
-  'Second',
-  'Third',
-  'Fourth',
-  'Fifth'
+  {
+    title: 'Amamos pegar uma 🌊',
+    folder: 'beach',
+    number: 4
+  },
+  {
+    title: 'Tantos momentos incríveis juntos! 🎉',
+    folder: 'moments',
+    number: 10
+  },
+  {
+    title: 'Lembra do início? 🥰',
+    folder: 'beginning',
+    number: 3
+  }
 ]
 </script>
+
+<style lang="scss" scoped>
+.image {
+  object-fit: cover;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.subtitle {
+  margin-top: 24px;
+  font-size: 2rem;
+  text-wrap: wrap;
+}
+
+.carousel {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+:deep(.v-responsive__content) {
+  display: flex !important;
+}
+</style>
