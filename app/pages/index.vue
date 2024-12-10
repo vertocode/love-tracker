@@ -1,8 +1,7 @@
-<script lang="ts" setup>
-
-</script>
-
 <template>
-  <PenguinCounter />
+  <v-container class="text-center">
+    <PenguinCounter />
+    <PenguinCarousel />
+  </v-container>
 </template>
 
