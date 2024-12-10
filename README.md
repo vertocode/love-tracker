@@ -8,4 +8,5 @@ A simple application I created as a gift for my girlfriend to celebrate our 3rd 
 
 #### Scan the QR code below to view the live demo:
 
+![qrcode2.png](public/qrcode2.png)
 ![qrcode.png](public/qrcode.png)
